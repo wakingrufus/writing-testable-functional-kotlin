@@ -1,0 +1,29 @@
+buildscript {
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.51"
+    }
+    repositories {
+        mavenCentral()
+    }
+}
+plugins {
+    id 'application'
+    id 'idea'
+    id "org.jetbrains.kotlin.jvm" version "1.1.51"
+    id 'jacoco'
+}
+mainClassName = 'com.grubhub.kotlin.MainKt'
+
+defaultTasks 'run'
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8"
+    compile 'io.github.microutils:kotlin-logging:1.4.4'
+
+    testCompile "org.jetbrains.kotlin:kotlin-test"
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile "com.nhaarman:mockito-kotlin-kt1.1:1.5.0"
+}
