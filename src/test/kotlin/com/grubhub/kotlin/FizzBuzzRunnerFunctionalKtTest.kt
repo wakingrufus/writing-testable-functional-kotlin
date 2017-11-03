@@ -46,4 +46,11 @@ class FizzBuzzRunnerFunctionalKtTest {
         assertEquals(listOf("1", "a", "b"), printedValues)
     }
 
+    @Test
+    fun fizzBuzzFunctionIntegrationTest() {
+        fizzBuzzFunctionIsolated(limit = 5,
+                printAll = {
+                    assertEquals(listOf("1", "2", "FIZZ", "4", "BUZZ"), it)
+                })
+    }
 }
