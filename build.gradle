@@ -1,6 +1,6 @@
 buildscript {
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.20"
     }
     repositories {
         mavenCentral()
@@ -9,7 +9,7 @@ buildscript {
 plugins {
     id 'application'
     id 'idea'
-    id "org.jetbrains.kotlin.jvm" version "1.2.0"
+    id "org.jetbrains.kotlin.jvm" version "1.2.20"
     id 'jacoco'
 }
 mainClassName = 'com.grubhub.kotlin.MainKt'
@@ -20,7 +20,7 @@ repositories {
 }
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8"
-    compile 'io.github.microutils:kotlin-logging:1.4.4'
+    compile 'io.github.microutils:kotlin-logging:1.4.9'
 
     testCompile "org.jetbrains.kotlin:kotlin-test"
     testCompile "org.jetbrains.kotlin:kotlin-test-junit"

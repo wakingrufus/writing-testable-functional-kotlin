@@ -25,14 +25,17 @@ class BigDecimalKtTest {
         return this.toBigDecimal().pow(exp.toBigDecimal())
     }
 
-    infix fun Number.equals(result: Int): Unit {
-     assertTrue(BigDecimal(this.toString()).compareTo(result.toBigDecimal()) == 0,
+    infix fun Number.equals(result: Int) {
+        assertTrue(BigDecimal(this.toString()).compareTo(result.toBigDecimal()) == 0,
                 "expected ${this} but was $result")
     }
 
-    infix fun Number.equals(expected: BigDecimal): Unit {
-      assertTrue(BigDecimal(this.toString()).compareTo(expected) == 0,
+    infix fun Number.equals(expected: BigDecimal) {
+        assertTrue(BigDecimal(this.toString()).compareTo(expected) == 0,
                 "expected $expected but was $this")
     }
 
+    fun Number.toBigDecimal(): BigDecimal {
+        return BigDecimal(this.toString())
+    }
 }
