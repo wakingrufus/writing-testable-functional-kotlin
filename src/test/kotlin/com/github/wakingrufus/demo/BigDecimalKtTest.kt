@@ -17,22 +17,16 @@ class BigDecimalKtTest {
         10 `to the` -1 equals BigDecimal("0.1")
     }
 
-    infix fun Int.`to the`(exp: Int): BigDecimal {
-        return this.toBigDecimal().pow(exp.toBigDecimal())
-    }
+    infix fun Int.`to the`(exp: Int): BigDecimal = this.toBigDecimal().pow(exp.toBigDecimal())
 
-    infix fun Int.`to the`(exp: Double): BigDecimal {
-        return this.toBigDecimal().pow(exp.toBigDecimal())
-    }
+    infix fun Int.`to the`(exp: Double): BigDecimal = this.toBigDecimal().pow(exp.toBigDecimal())
 
     infix fun Number.equals(result: Int) {
-        assertTrue(BigDecimal(this.toString()).compareTo(result.toBigDecimal()) == 0,
-                "expected ${this} but was $result")
+        assertTrue(actual = BigDecimal(this.toString()).compareTo(result.toBigDecimal()) == 0, message = "expected ${this} but was $result")
     }
 
     infix fun Number.equals(expected: BigDecimal) {
-        assertTrue(BigDecimal(this.toString()).compareTo(expected) == 0,
-                "expected $expected but was $this")
+        assertTrue(actual = BigDecimal(this.toString()).compareTo(expected) == 0, message = "expected $expected but was $this")
     }
 
     fun Number.toBigDecimal(): BigDecimal {

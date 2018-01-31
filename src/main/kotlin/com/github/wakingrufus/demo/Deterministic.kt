@@ -9,10 +9,7 @@ fun newMessageNonDeterministic(message: String): ChatMessage {
             message = message)
 }
 
-fun newMessageDeterministic(user: String,
-                            timestamp: Instant,
-                            message: String)
-        : ChatMessage {
+fun newMessageDeterministic(user: String, timestamp: Instant, message: String): ChatMessage {
     return ChatMessage(
             user = user,
             timestamp = timestamp,
